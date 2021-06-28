@@ -1,0 +1,132 @@
+Nome: Blenda Gaspar 
+Turma : 25
+
+
+Atividade  1: 
+
+--Crie um banco de dados para um serviço de RH de uma empresa, onde o sistema trabalhará com as informações dos funcionaries desta empresa. 
+--Crie uma tabela de funcionaries e utilizando a habilidade de abstração e determine 5 atributos relevantes dos funcionaries para se trabalhar com o serviço deste RH.
+--Popule esta tabela com até 5 dados;
+--Faça um select que retorne os funcionaries com o salário maior do que 2000.
+--Faça um select que retorne os funcionaries com o salário menor do que 2000.
+--Ao término atualize um dado desta tabela através de uma query de atualização.
+--salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+
+create database Atividade1;
+
+use atividade1 ;
+create table funcionarios(
+id bigint auto_increment,
+Nome varchar(60) not null,
+Idade bigint(20)not null,
+RG bigint(20) not null,
+Salario decimal(10,2) not null,
+Departamento varchar(60) not null,
+primary key(id)
+);
+
+
+insert into funcionarios (Nome,idade , RG ,Salario, Departamento) values ("Joana Silva", 25, 3939393, 2100, "Atendimento ao cliente");
+insert into funcionarios (Nome,idade , RG ,Salario, Departamento) values ("Camila joão", 30, 3939394,1000, "Recursos Humanos")
+insert into funcionarios (Nome,idade , RG ,Salario, Departamento) values ("João silva", 27, 3939354,3000, "Facilities")
+insert into funcionarios (Nome,idade , RG ,Salario, Departamento) values ("Fernando ferreira",40, 393934,1500, "Segurança")
+insert into funcionarios (Nome,idade , RG ,Salario, Departamento) values ("Pedro valerio", 36, 3939356,2500, "Supply chain")
+
+
+select* from funcionarios where salario >= 2000
+
+
+select* from funcionarios where salario <= 2000
+
+
+update funcionarios set Nome = "Luciana Pereira", Idade= 36  where id= 2;
+
+
+
+==================================================================================================================================================================
+
+Atividade  2:
+
+--Crie um banco de dados para um e commerce, onde o sistema trabalhará com as informações dos produtos deste ecommerce. 
+--Crie uma tabela produtos e utilizando a habilidade de abstração e determine 5 atributos relevantes dos produtos para se trabalhar com o serviço deste ecommerce.
+--Popule esta tabela com até 8 dados;
+--Faça um select que retorne os produtos com o valor maior do que 500.
+--Faça um select que retorne os produtos com o valor menor do que 500.
+--Ao término atualize um dado desta tabela através de uma query de atualização.
+--salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+
+
+use atividade1;
+create table ecomerce(
+id bigint auto_increment,
+Nome varchar(60) not null,
+Preco decimal(10,2)not null,
+Categoria varchar(60) not null,
+Genero varchar(60) not null,
+Marca varchar(60) not null,
+primary key(id)
+);
+
+
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values (" Blusa de frio",500 , "Blusas", "feminino", "dolce gabbana");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("calça skin", 670, "calças", "feminino", "cartier");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("short ", 400, "shorts", "masculino", "nike");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("blusa de manga longa", 300 , "blusas", "feminino", "nike");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("calça1", 250 , "calças", "feminino", "cartier");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("Blusa 3", 200 , "calças", "feminino", "adidas");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("calça4", 560 , "calças", "feminino", "cartier");
+insert into ecomerce(Nome, Preco, Categoria, Genero, Marca) values ("calça6", 420 , "calças", "feminino", "cartier");
+
+
+
+select* from ecomerce where Preco > 500 ;
+
+select* from ecomerce where Preco < 500 ;
+
+
+update ecomerce set Nome = "Fato de treino", Preco= 210 , Genero= "Masculino"   where id= 5 ;
+
+
+===========================================================================================================================================================================
+Atividade 3:
+
+
+--Crie um banco de dados para um registro de uma escola, onde o sistema trabalhará com as informações dos estudantes deste registro dessa escola. 
+--Crie uma tabela estudantes e utilizando a habilidade de abstração e determine 5 atributos relevantes dos estudantes para se trabalhar com o serviço dessa escola.
+--Popule esta tabela com até 8 dados;
+--Faça um select que retorne o/as estudantes  com a nota maior do que 7.
+--Faça um select que retorne o/as estudantes  com a nota menor do que 7.
+--Ao término atualize um dado desta tabela através de uma query de atualização.
+--salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
+
+
+
+use atividade1;
+create table escola(
+id bigint auto_increment,
+Nome_aluno varchar(60) not null,
+Turma varchar(60)not null,
+Nota varchar(60) not null,
+Genero varchar(60) not null,
+Disciplina varchar(60) not null,
+primary key(id)
+);
+
+
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" Ana","1 ", "9", "feminino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" patricia","4 ", "7", "feminino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" Maria","3 ", "6", "feminino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" joao","2 ", "5", "maculino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" maria","2 ", "4", "feminino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" Antonio","4 ", "8", "masculino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values ("Pedro","3 ", "6.3", "masculino", "matematica");
+insert into escola(Nome_aluno, Turma, Nota, Genero, Disciplina) values (" Manuel","1 ", "10", "feminino", "matematica");
+
+
+select * from escola where Nota > 7;
+
+select * from escola where Nota < 7;
+
+update escola set Nome_aluno = "Domingos", Turma= 2 , Genero= "Feminino "   where id= 3;
